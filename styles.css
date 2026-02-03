@@ -130,6 +130,11 @@
 html {
     scroll-behavior: smooth;
     font-size: 16px;
+    /* Prevent horizontal scroll on zoom */
+    overflow-x: hidden;
+    text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
 }
 
 body {
@@ -140,6 +145,10 @@ body {
     background-color: var(--bg-primary);
     transition: background-color var(--transition-base), color var(--transition-base);
     overflow-x: hidden;
+    /* Ensure content doesn't overflow on zoom */
+    max-width: 100vw;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 a {
@@ -171,6 +180,8 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+    /* Prevent overflow on zoom */
+    overflow-x: hidden;
 }
 
 /* ========================================
@@ -488,6 +499,7 @@ button {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
+    overflow-x: hidden;
 }
 
 .hero-content {
@@ -531,6 +543,8 @@ button {
     line-height: 1.8;
     margin-bottom: var(--spacing-xl);
     max-width: 540px;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .hero-cta {
@@ -2454,6 +2468,204 @@ section {
 (min-resolution: 192dpi) {
     .profile-photo img {
         image-rendering: -webkit-optimize-contrast;
+    }
+}
+
+/* ========================================
+   Zoom and Overflow Fixes for Mobile
+   ======================================== */
+
+/* Prevent content from breaking on zoom */
+section {
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.hero {
+    overflow-x: hidden;
+    overflow-y: visible;
+}
+
+/* Profile wrapper flex handling for zoom */
+.profile-wrapper {
+    flex-shrink: 0;
+    max-width: 100%;
+}
+
+/* Glass cards - ensure they don't overflow */
+.glass-card {
+    max-width: 100%;
+    overflow: hidden;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Timeline overflow fix */
+.timeline {
+    overflow: hidden;
+}
+
+.timeline-content {
+    max-width: 100%;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Skill items - prevent overflow */
+.skill-item {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.skill-info {
+    overflow: hidden;
+    word-wrap: break-word;
+}
+
+/* Project cards overflow */
+.project-card {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.project-description {
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Contact form overflow */
+.contact-form-section,
+.contact-info-section {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.contact-link-value {
+    word-break: break-all;
+}
+
+/* Footer overflow */
+.footer-content {
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/* Additional mobile zoom fixes */
+@media (max-width: 768px) {
+
+    /* Ensure hero text doesn't break layout */
+    .hero-text {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    .hero-title {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Profile image sizing on zoom */
+    .profile-wrapper {
+        max-width: calc(100vw - 2rem);
+    }
+
+    /* Ensure cards stay within viewport */
+    .glass-card {
+        max-width: calc(100vw - 2rem);
+    }
+
+    /* Timeline text handling */
+    .timeline-title {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+
+    /* Button text handling */
+    .btn {
+        white-space: normal;
+        text-align: center;
+    }
+
+    /* Contact section text */
+    .contact-form-title {
+        word-wrap: break-word;
+        hyphens: auto;
+    }
+}
+
+@media (max-width: 480px) {
+
+    /* Tighter controls for small screens */
+    .container,
+    .hero-container {
+        padding: 0 var(--spacing-sm);
+        max-width: 100vw;
+    }
+
+    /* Ensure sections don't overflow */
+    .about-content,
+    .skills-grid,
+    .projects-grid,
+    .gallery-grid,
+    .contact-wrapper {
+        max-width: 100%;
+        overflow: hidden;
+    }
+
+    /* Modal on small screens */
+    .modal-card {
+        max-width: calc(100vw - 2rem);
+        margin: var(--spacing-sm);
+    }
+
+    /* Image containers */
+    .hero-image {
+        max-width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+/* Very Small Zoom Handling - when zoomed in significantly */
+@media (max-width: 320px) {
+
+    .container,
+    .hero-container,
+    .nav-container {
+        padding: 0 8px;
+    }
+
+    .profile-wrapper {
+        width: 120px;
+        height: 120px;
+    }
+
+    .hero-title {
+        font-size: 1.25rem;
+    }
+
+    .section-title {
+        font-size: 1.1rem;
+    }
+
+    .btn {
+        padding: 8px 12px;
+        font-size: 0.75rem;
+    }
+
+    .skill-item {
+        padding: 6px;
+    }
+
+    .project-card,
+    .skill-category {
+        padding: 8px;
+    }
+
+    .glass-card {
+        padding: 8px;
+        border-radius: var(--radius-md);
     }
 }
 
