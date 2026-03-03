@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initTypingEffect();
     initLightbox();
     initButtonRipple();
+    initGalleryTouchFeedback();
 });
 
 // ========================================
@@ -67,18 +68,46 @@ function initNavigation() {
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-link');
 
-    // Mobile menu toggle
-    navToggle.addEventListener('click', () => {
+    // Mobile menu toggle with body scroll lock
+    let scrollPosition = 0;
+
+    navToggle.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const isOpening = !navToggle.classList.contains('active');
         navToggle.classList.toggle('active');
         navMenu.classList.toggle('active');
+
+        if (isOpening) {
+            scrollPosition = window.pageYOffset;
+            document.body.classList.add('nav-open');
+            document.body.style.top = `-${scrollPosition}px`;
+        } else {
+            closeNav();
+        }
     });
+
+    function closeNav() {
+        navToggle.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('nav-open');
+        document.body.style.top = '';
+        window.scrollTo(0, scrollPosition);
+    }
 
     // Close menu when clicking a link
     navLinks.forEach(link => {
         link.addEventListener('click', () => {
-            navToggle.classList.remove('active');
-            navMenu.classList.remove('active');
+            closeNav();
         });
+    });
+
+    // Close menu when tapping outside
+    document.addEventListener('click', (e) => {
+        if (navMenu.classList.contains('active') &&
+            !navMenu.contains(e.target) &&
+            !navToggle.contains(e.target)) {
+            closeNav();
+        }
     });
 
     // Navbar scroll effect
@@ -637,6 +666,27 @@ function initLightbox() {
             closeLightbox();
         }
     });
+
+    // Swipe down to close lightbox on touch devices
+    let touchStartY = 0;
+    let touchStartX = 0;
+
+    lightbox.addEventListener('touchstart', (e) => {
+        touchStartY = e.touches[0].clientY;
+        touchStartX = e.touches[0].clientX;
+    }, { passive: true });
+
+    lightbox.addEventListener('touchend', (e) => {
+        const touchEndY = e.changedTouches[0].clientY;
+        const touchEndX = e.changedTouches[0].clientX;
+        const diffY = touchEndY - touchStartY;
+        const diffX = Math.abs(touchEndX - touchStartX);
+
+        // Close on swipe down (> 80px vertical, less horizontal movement)
+        if (diffY > 80 && diffX < 100) {
+            closeLightbox();
+        }
+    }, { passive: true });
 }
 
 // ========================================
@@ -692,5 +742,23 @@ function initEnhancedScrollReveal() {
     document.querySelectorAll('section, .skills-grid, .projects-grid, .gallery-grid').forEach(el => {
         el.classList.add('reveal');
         observer.observe(el);
+    });
+}
+
+// ========================================
+// Gallery Touch Feedback for Mobile
+// ========================================
+function initGalleryTouchFeedback() {
+    if (!('ontouchstart' in window)) return;
+
+    const galleryItems = document.querySelectorAll('.gallery-item.has-image');
+    galleryItems.forEach(item => {
+        item.addEventListener('touchstart', () => {
+            item.classList.add('touch-active');
+        }, { passive: true });
+
+        item.addEventListener('touchend', () => {
+            setTimeout(() => item.classList.remove('touch-active'), 300);
+        }, { passive: true });
     });
 }

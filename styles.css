@@ -151,6 +151,14 @@ body {
     overflow-wrap: break-word;
 }
 
+/* Lock body scroll when mobile nav is open */
+body.nav-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+}
+
 a {
     text-decoration: none;
     color: inherit;
@@ -440,6 +448,8 @@ button {
 .hero {
     position: relative;
     min-height: 100vh;
+    min-height: 100dvh;
+    /* Dynamic viewport height for mobile browsers */
     display: flex;
     align-items: center;
     padding: var(--spacing-4xl) 0;
@@ -1300,7 +1310,8 @@ section {
     font-size: var(--font-size-base);
 }
 
-.gallery-item.has-image:hover .gallery-overlay {
+.gallery-item.has-image:hover .gallery-overlay,
+.gallery-item.has-image.touch-active .gallery-overlay {
     opacity: 1;
 }
 
@@ -1497,6 +1508,15 @@ section {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+
+@media (max-width: 480px) {
+    .contact-link-value {
+        white-space: normal;
+        word-break: break-word;
+        overflow-wrap: break-word;
+        font-size: var(--font-size-xs);
+    }
 }
 
 .contact-link-card>i {
@@ -1753,6 +1773,15 @@ section {
     .nav-link {
         font-size: var(--font-size-base);
         padding: var(--spacing-sm) 0;
+    }
+
+    /* Safe area padding for notched phones */
+    .navbar {
+        padding-top: max(var(--spacing-md), env(safe-area-inset-top));
+    }
+
+    .footer {
+        padding-bottom: max(var(--spacing-xl), env(safe-area-inset-bottom));
     }
 
     .hero {
@@ -2181,7 +2210,8 @@ section {
     .form-group input,
     .form-group textarea {
         padding: var(--spacing-sm) var(--spacing-md);
-        font-size: var(--font-size-sm);
+        font-size: 16px;
+        /* Prevents iOS auto-zoom on input focus */
     }
 
     .form-group textarea {
@@ -2416,6 +2446,33 @@ section {
         background: var(--surface-hover);
         border-color: var(--primary);
     }
+
+    /* Gallery touch caption reveal */
+    .gallery-item.has-image .gallery-overlay {
+        opacity: 0.7;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7) 0%, transparent 60%);
+    }
+
+    /* Profile easter egg on tap */
+    .profile-wrapper:active .profile-hover-text {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    /* Larger lightbox close button for touch */
+    .lightbox-close {
+        width: 56px;
+        height: 56px;
+        top: max(var(--spacing-md), env(safe-area-inset-top, 16px));
+        right: var(--spacing-md);
+        font-size: var(--font-size-2xl);
+    }
+
+    /* Lightbox safe area padding */
+    .lightbox {
+        padding: var(--spacing-md);
+        padding-top: max(var(--spacing-xl), env(safe-area-inset-top, 20px));
+    }
 }
 
 /* Landscape Mode for Phones */
@@ -2541,7 +2598,8 @@ section {
 }
 
 .contact-link-value {
-    word-break: break-all;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 /* Footer overflow */
