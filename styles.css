@@ -1841,13 +1841,13 @@ section {
     }
 
     .timeline::before {
-        left: 10px;
+        left: 14px;
     }
 
     .timeline-marker {
-        left: calc(-1 * var(--spacing-2xl) + 3px);
-        width: 22px;
-        height: 22px;
+        left: -24px;
+        width: 24px;
+        height: 24px;
     }
 
     .timeline-content {
@@ -2011,45 +2011,26 @@ section {
         font-size: var(--font-size-sm);
     }
 
-    /* About section */
-    .about-card {
-        padding: var(--spacing-lg);
-    }
-
-    .about-icon {
-        width: 60px;
-        height: 60px;
-        font-size: 24px;
-    }
-
-    .about-card h3 {
-        font-size: var(--font-size-lg);
-    }
-
-    .about-card p {
-        font-size: var(--font-size-sm);
-    }
-
     /* Timeline */
     .timeline {
-        padding-left: var(--spacing-xl);
+        padding-left: 35px;
     }
 
     .timeline::before {
-        left: 8px;
+        left: 15px;
         width: 2px;
     }
 
     .timeline-marker {
-        left: calc(-1 * var(--spacing-xl) + 0px);
-        width: 18px;
-        height: 18px;
-        border-width: 2px;
-        font-size: 8px;
+        left: -32px;
+        width: 26px;
+        height: 26px;
+        border-width: 3px;
+        font-size: 10px;
     }
 
     .timeline-content {
-        padding: var(--spacing-sm);
+        padding: var(--spacing-sm) var(--spacing-md);
     }
 
     .timeline-date {
@@ -2359,21 +2340,22 @@ section {
     }
 
     .timeline {
-        padding-left: var(--spacing-lg);
+        padding-left: 30px;
     }
 
     .timeline::before {
-        left: 6px;
+        left: 12px;
     }
 
     .timeline-marker {
-        left: calc(-1 * var(--spacing-lg) + 0px);
-        width: 14px;
-        height: 14px;
+        left: -28px;
+        width: 22px;
+        height: 22px;
+        font-size: 9px;
     }
 
     .timeline-content {
-        padding: var(--spacing-xs);
+        padding: var(--spacing-xs) var(--spacing-sm);
     }
 
     .skill-item {
