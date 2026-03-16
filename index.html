@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aditya Joshi | Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Icon Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!--Dev Icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+
+    <!-- EmailJS SDK -->
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+</head>
+
+<body>
+
+    <!-- NavBar Section -->
+    <header>
+        <nav class="navbar">
+            <div class="logo">AJ</div>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#achievements">Acheievements</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+
+            <div class="theme-toggle" id="theme-toggle">🌙</div>
+            <div class="menu-toggle" id="menuToggle">☰</div>
+        </nav>
+    </header>
+
+    <!-- Hero-Section -->
+    <section id="home" class="hero">
+        <div class="hero-left">
+            <h3>Hello, I'm</h3>
+            <h1>Aditya Joshi</h1>
+            <h2>Aspiring Full-Stack Developer,exploring Web & Blockchain.</h2>
+            <p>I'm a first-year B.Tech Computer Science student with a strong interest in Web Development and Blockchain
+                Technology.
+                I enjoy solving problems, experimenting with new tools, and understanding how systems work under the
+                hood.
+                I'm always curious, eager to learn, and passionate about building projects that expand both my technical
+                and creative skills.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <img src="images/profile.jpg" alt="Profile">
+
+        </div>
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about" class="section reveal-on-scroll">
+        <h2 class=section-title>About Me</h2>
+        <p class="about-subtitle">My Education Journey and learning Mindset</p>
+
+
+        <div class="education-container">
+
+            <!-- Left Side Card -->
+            <div class="journey-card">
+
+                <div class="journey-icon">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                </div>
+
+                <h3>Learning Journey</h3>
+                <p>As a Computer Science student, I believe in building strong fundamentals while staying curious about
+                    emerging technologies.
+                    Every project is an opportunity to learn something new,
+                    and I embrace challenges as stepping stones to growth.</p>
+            </div>
+
+            <!-- TIMELINE -->
+
+            <div class="timeline">
+
+                <div class="timeline-line"></div>
+
+            </div>
+
+            <!-- Education Details -->
+            <div class="education-cards">
+                <!-- 10th Info -->
+                <div class="edu-card">
+                    <h4>10th Grade</h4>
+                    <h3>Good Shepherd Central School</h3>
+                    <p>Belgavi,Karnataka</p>
+                    <span class="badge">81%</span>
+                </div>
+
+                <!-- PU-1 and PU-2 -->
+                <div class="edu-card">
+                    <h4>PU-1 and PU-2 </h4>
+                    <h3>KLE IPC </h3>
+                    <p>Belgavi, Karnataka</p>
+                    <div class="badge-group">
+                        <span class="badge">PU-1 • 85% </span> <span class="badge">PU-2 • 81% </span>
+                    </div>
+                </div>
+
+                <!-- Btech -->
+                <div class="edu-card">
+                    <h4>Currently Pursuing</h4>
+                    <h3>B.Tech in Computer Science and Engineering </h3>
+                    <p>SRM University Ap</p>
+                    <span class="badge badge-green">2nd Semester</span> <span class="badge">Grade • 8.5 </span>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Skills -->
+    <section id="skills" class="section reveal-on-scroll">
+        <h2 class="section-title">My Skills</h2>
+        <p class="section-subtitle">
+            Technologies I'm currently comfortable with and exploring
+        </p>
+        <div class="skills-container">
+
+            <!-- Comfortable with -->
+            <div class="skills-box">
+                <div class="skills-header">
+                    <i class="fa-solid fa-code"></i>
+                    <h3>Comfortable With</h3>
+                </div>
+                <div class="skill-item">
+                    <i class="devicon-c-plain colored skill-icon"></i>
+                    <div class="skill-text">
+                        <h4>C</h4>
+                        <p>Programming Language</p>
+                    </div>
+                </div>
+                <div class="skill-item">
+
+                    <i class="devicon-cplusplus-plain colored skill-icon"></i>
+
+                    <div class="skill-text">
+                        <h4>C++</h4>
+                        <p>Object-Oriented Programming</p>
+                    </div>
+
+                </div>
+
+                <div class="skill-item">
+
+                    <i class="devicon-html5-plain colored skill-icon"></i>
+
+                    <div class="skill-text">
+                        <h4>HTML</h4>
+                        <p>Web Structure</p>
+                    </div>
+
+                </div>
+                <div class="skill-item">
+
+                    <i class="devicon-css3-plain colored skill-icon"></i>
+
+                    <div class="skill-text">
+                        <h4>CSS</h4>
+                        <p>Web Styling</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Currently Learning -->
+            <div class="skills-box">
+                <div class="skills-header">
+                    <i class="fa-solid fa-rocket"></i>
+                    <h3>Currently Learning</h3>
+                </div>
+
+                <div class="skill-item">
+                    <i class="devicon-javascript-plain colored skill-icon"></i>
+                    <div class="skill-text">
+                        <h4>JavaScript</h4>
+                        <p>Web Interactivity</p>
+                    </div>
+                </div>
+
+
+                <div class="skill-item">
+
+                    <i class="fa-solid fa-cubes"></i>
+
+                    <div class="skill-text">
+                        <h4>Blockchain Basics</h4>
+                        <p>Distributed Systems</p>
+                    </div>
+
+                </div>
+            </div>
+    </section>
+
+
+    <!-- Projects Section -->
+    <section id="projects" class="section reveal-on-scroll">
+
+        <h2 class="section-title">Projects</h2>
+
+        <p class="projects-subtitle">
+            Concept-driven projects exploring real-world problems
+        </p>
+
+        <div class="projects-container">
+
+            <!-- Project 1 -->
+
+            <div class="project-card">
+
+                <div class="project-content">
+
+                    <h3>Lottery D-App</h3>
+
+                    <p>
+                        Blockchain Lottery is a decentralized lottery application built using Solidity and Ethereum
+                        smart contracts.
+                        The project demonstrates how blockchain technology can create a transparent, trustless, and
+                        tamper-proof lottery system where participants can enter by sending cryptocurrency and a winner
+                        is selected automatically.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Blockchain</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/adityajoshi18vk-art/Blockchain-Lottery-Wallet">GitHub</a>
+                        <a href="https://aj-lottery.vercel.app/">Live Demo</a>
+                    </div>
+
+                </div>
+            </div>
+
+
+            <!-- Project 2 -->
+
+            <div class="project-card">
+
+                <div class="project-content">
+
+                    <h3>Digital Will</h3>
+
+                    <p>
+                        Conceptual platform solving the crisis of digital inheritance.
+                        Focuses on secure access orchestration for digital assets
+                        without storing sensitive data directly.
+                    </p>
+
+                    <div class="project-tech">
+                        <span>Security</span>
+                        <span>Concept</span>
+                    </div>
+
+                    <div class="project-links">
+                        <a href="https://github.com/Praneeth0910/Digital_will">GitHub</a>
+                        <a href="#">Live Demo</a>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Achievements Section -->
+    <section id="achievements" class="section reveal-on-scroll">
+
+        <h2 class="section-title">Achievements</h2>
+
+        <p class="section-subtitle">
+            Recognition, competitions and milestones in my journey
+        </p>
+
+        <div class="achievements-container">
+
+            <!-- Achievement 1 -->
+
+            <div class="achievement-card">
+
+                <div class="achievement-text">
+
+                    <h3>NULL Point CTF </h3>
+
+                    <p>
+                        Won 2nd Prize in Documentation and Writing cateogary in NULL Point CTF Orgainized in our
+                        University
+                    </p>
+
+                    <div class="achievement-tags">
+                        <span>CyberSecurity</span>
+                    </div>
+
+                </div>
+
+                <div class="achievement-image">
+
+                    <img src="images/nullpointctf.jpeg" alt="Hackathon Trophy">
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="section reveal-on-scroll">
+
+        <p class="gallery-tag">CAPTURED MOMENTS</p>
+
+        <h2 class="section-title">Gallery</h2>
+
+        <p class="gallery-subtitle">
+            Hackathon memories, events, and snapshots from my journey
+        </p>
+
+        <div class="gallery-container">
+
+            <img src="images/gallery-1.png" alt="gallery image">
+            <img src="images/gallery-2.jpg" alt="gallery image">
+            <img src="images/gallery-4.png" alt="gallery image">
+
+        </div>
+
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section reveal-on-scroll">
+
+        <p class="contact-tag">GET IN TOUCH</p>
+
+        <h2 class="section-title">Contact Me</h2>
+
+        <p class="contact-subtitle">
+            Feel free to reach out for collaborations or just a friendly chat
+        </p>
+
+        <div class="contact-container">
+
+            <!-- LEFT SIDE -->
+
+            <div class="contact-left">
+
+                <h3>Ready to collaborate on something amazing?</h3>
+
+                <p class="contact-text">
+                    I'm always excited to connect with fellow developers, potential collaborators,
+                    and anyone interested in discussing technology, projects, or opportunities.
+                    Whether you have a project in mind, want to exchange ideas, or just want to say hi—
+                    I'd love to hear from you.
+                </p>
+
+                <form class="contact-form" id="contact-form">
+
+                    <label>Your Name</label>
+                    <input type="text" name="from_name" placeholder="Enter your name" required>
+
+                    <label>Your Email</label>
+                    <input type="email" name="from_email" placeholder="your.email@example.com" required>
+
+                    <label>Subject</label>
+                    <input type="text" name="subject" placeholder="What's this about?" required>
+
+                    <label>Message</label>
+                    <textarea name="message" placeholder="Tell me about your project or idea..." required></textarea>
+
+                    <button type="submit" class="contact-btn">
+                        Send Message →
+                    </button>
+
+                    <p id="form-status" style="margin-top: 10px; font-size: 0.9rem;"></p>
+
+                </form>
+
+            </div>
+
+            <!-- RIGHT SIDE -->
+
+            <div class="contact-right">
+
+                <div class="contact-card">
+
+                    <div class="contact-icon">
+                        <i class="fa-solid fa-paper-plane"></i>
+                    </div>
+
+                    <h3>Get in Touch Directly</h3>
+
+                    <p>Prefer a direct approach? Reach out through any of these channels.</p>
+
+                    <!-- Email -->
+                    <a href="mailto:adityajoshi18vk@gmail.com" class="contact-item">
+                        <i class="fa-solid fa-envelope"></i>
+                        <div>
+                            <p class="contact-label">EMAIL</p>
+                            <span>adityajoshi18vk@gmail.com</span>
+                        </div>
+                    </a>
+
+                    <!-- Phone -->
+                    <a href="tel:+918431848445" class="contact-item">
+                        <i class="fa-solid fa-phone"></i>
+                        <div>
+                            <p class="contact-label">PHONE</p>
+                            <span>+91 8431848445</span>
+                        </div>
+                    </a>
+
+                    <!-- LinkedIn -->
+                    <a href="https://www.linkedin.com/in/aditya-joshi-659001350/" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <div>
+                            <p class="contact-label">LINKEDIN</p>
+                            <span>Connect with me</span>
+                        </div>
+                    </a>
+
+                    <!-- GitHub -->
+                    <a href="https://github.com/adityajoshi18vk-art" target="_blank" class="contact-item">
+                        <i class="fa-brands fa-github"></i>
+                        <div>
+                            <p class="contact-label">GITHUB</p>
+                            <span>View my code</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+        </div>
+
+
+    </section>
+
+    <!-- Fotter Section -->
+    <footer class="footer">
+
+        <h3>Aditya Joshi</h3>
+
+        <p>Aspiring Full Stack Developer</p>
+
+        <div class="socials">
+
+            <a href="https://www.linkedin.com/in/aditya-joshi-659001350/">
+                <i class="fa-brands fa-linkedin"></i>
+            </a>
+
+            <a href="https://github.com/adityajoshi18vk-art">
+                <i class="fa-brands fa-github"></i>
+            </a>
+
+            <a href="https://www.instagram.com/aditya.vk16?igsh=MXhqdnR0b2YyYXhxaQ%3D%3D">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+        </div>
+        <p class="copyright">
+            © 2026 | Made with <i class="fa-solid fa-heart"></i> by Aditya
+        </p>
+
+
+    </footer>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
